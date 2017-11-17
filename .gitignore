@@ -1,5 +1,4 @@
 
-# Created by https://www.gitignore.io/api/node
 
 ### Node ###
 # Logs
@@ -62,5 +61,6 @@ typings/
 # dotenv environment variables file
 .env
 
-
-# End of https://www.gitignore.io/api/node
+### MISC ###
+#Code Editor
+.vscode/
