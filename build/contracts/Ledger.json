@@ -1,0 +1,364 @@
+{
+  "contractName": "Ledger",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "ledgerAccounts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "ledger",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b33600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061020a8061005f6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635fa975921461005c5780638da5cb5b146100bf578063fbfa941f14610114575b600080fd5b341561006757600080fd5b61007d6004808035906020019091905050610161565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100ca57600080fd5b6100d26101a0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011f57600080fd5b61014b600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101c6565b6040518082815260200191505060405180910390f35b60018181548110151561017057fe5b90600052602060002090016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060205280600052604060002060009150905054815600a165627a7a7230582064bc6f05c0bf5f7e70318a9d3e707fd9c611f88d03f7358ba40e436d60a25be20029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635fa975921461005c5780638da5cb5b146100bf578063fbfa941f14610114575b600080fd5b341561006757600080fd5b61007d6004808035906020019091905050610161565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100ca57600080fd5b6100d26101a0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011f57600080fd5b61014b600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101c6565b6040518082815260200191505060405180910390f35b60018181548110151561017057fe5b90600052602060002090016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060205280600052604060002060009150905054815600a165627a7a7230582064bc6f05c0bf5f7e70318a9d3e707fd9c611f88d03f7358ba40e436d60a25be20029",
+  "sourceMap": "25:335:0:-;;;297:60;;;;;;;;340:10;332:5;;:18;;;;;;;;;;;;;;;;;;25:335;;;;;;",
+  "deployedSourceMap": "25:335:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;203:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;269:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;91:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;203:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;269:20::-;;;;;;;;;;;;;:::o;91:37::-;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.4;\n\ncontract Ledger {\n\n    // Ledger to track investor investment\n    mapping (address=>uint) public ledger;\n\n    // List of account. This maps to the keys inside the ledger map\n    address[] public ledgerAccounts;\n\n    // Owner of this Ledger\n    address public owner; \n\n    function Ledger() public {\n        owner = msg.sender;\n    }\n\n}",
+  "sourcePath": "/Users/admin/Documents/Dev/crypto/Pulsar/contracts/Ledger.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/admin/Documents/Dev/crypto/Pulsar/contracts/Ledger.sol",
+      "exportedSymbols": {
+        "Ledger": [
+          20
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".4"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            20
+          ],
+          "name": "Ledger",
+          "scope": 21
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ledger",
+              "scope": 20,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => uint256)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => uint256)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 2,
+                    "name": "ElementaryTypeName",
+                    "src": "100:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 3,
+                    "name": "ElementaryTypeName",
+                    "src": "109:4:0"
+                  }
+                ],
+                "id": 4,
+                "name": "Mapping",
+                "src": "91:23:0"
+              }
+            ],
+            "id": 5,
+            "name": "VariableDeclaration",
+            "src": "91:37:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ledgerAccounts",
+              "scope": 20,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address[] storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "address[] storage pointer"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 6,
+                    "name": "ElementaryTypeName",
+                    "src": "203:7:0"
+                  }
+                ],
+                "id": 7,
+                "name": "ArrayTypeName",
+                "src": "203:9:0"
+              }
+            ],
+            "id": 8,
+            "name": "VariableDeclaration",
+            "src": "203:31:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "owner",
+              "scope": 20,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 9,
+                "name": "ElementaryTypeName",
+                "src": "269:7:0"
+              }
+            ],
+            "id": 10,
+            "name": "VariableDeclaration",
+            "src": "269:20:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "Ledger",
+              "payable": false,
+              "scope": 20,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 11,
+                "name": "ParameterList",
+                "src": "312:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 12,
+                "name": "ParameterList",
+                "src": "322:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10,
+                              "type": "address",
+                              "value": "owner"
+                            },
+                            "id": 13,
+                            "name": "Identifier",
+                            "src": "332:5:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 89,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 14,
+                                "name": "Identifier",
+                                "src": "340:3:0"
+                              }
+                            ],
+                            "id": 15,
+                            "name": "MemberAccess",
+                            "src": "340:10:0"
+                          }
+                        ],
+                        "id": 16,
+                        "name": "Assignment",
+                        "src": "332:18:0"
+                      }
+                    ],
+                    "id": 17,
+                    "name": "ExpressionStatement",
+                    "src": "332:18:0"
+                  }
+                ],
+                "id": 18,
+                "name": "Block",
+                "src": "322:35:0"
+              }
+            ],
+            "id": 19,
+            "name": "FunctionDefinition",
+            "src": "297:60:0"
+          }
+        ],
+        "id": 20,
+        "name": "ContractDefinition",
+        "src": "25:335:0"
+      }
+    ],
+    "id": 21,
+    "name": "SourceUnit",
+    "src": "0:360:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "1510893975748": {
+      "events": {},
+      "links": {},
+      "address": "0x7f3d541f2897e9c4b0fabee13e58a4390b424e3f"
+    },
+    "1510896749738": {
+      "events": {},
+      "links": {},
+      "address": "0xb8ce0de6cd6df853d2211ea2248b8e1bf76435a7"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2017-11-17T05:33:12.862Z"
+}
