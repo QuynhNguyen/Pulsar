@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <h2>{{ ownerAddress }}</h2>
+    <h2>Contract Owned By: {{ ownerAddress }}</h2>
+    <h2>Contract Initial Balance: {{ initialBalance }}</h2>
+    <h3>Increase Initial Balance (in Ether): <input v-model="initialBalanceIncreaseAmount" /> <button v-on:click="increaseInitialBalance">submit</button></h3>
   </div>
 </template>
 
@@ -13,19 +15,28 @@ export default {
   data () {
     return {
       msg: 'Pulsar - Decentralized AI Powered Trading Platform',
-      ownerAddress: undefined
+      ownerAddress: undefined,
+      initialBalance: 0,
+      initialBalanceIncreaseAmount: 0
     }
   },
-  beforeCreate: function () {
+  beforeCreate () {
     Ledger.init().then(() => {
       return Ledger.owner()
     }).then(address => {
       this.ownerAddress = address
+      console.log(this.ownerAddress)
+      return Ledger.initialBalance()
+    }).then(initialBalance => {
+      this.initialBalance = window.web3.fromWei(initialBalance, 'ether')
     }).catch(err => {
       console.log(err)
     })
   },
   methods: {
+    increaseInitialBalance () {
+      Ledger.increaseBalance(this.initialBalanceIncreaseAmount)
+    }
   }
 }
 </script>
